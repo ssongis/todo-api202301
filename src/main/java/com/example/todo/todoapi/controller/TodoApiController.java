@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/api/todos")
+// CORS 허용 설정
+@CrossOrigin
 public class TodoApiController {
 
     private final TodoService todoService;
@@ -75,7 +77,7 @@ public class TodoApiController {
     public ResponseEntity<?> retrieveTodoList() {
         log.info("/api/todos GET request!");
 
-        TodoListResponseDTO responseDTO = todoService.retrieve();
+        TodoListResponseDTO responseDTO = todoService.retrieve(); // retrieve() => Entity를 DTO로 반환한 것
 
         return ResponseEntity.ok().body(responseDTO);
     }
