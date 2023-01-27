@@ -38,5 +38,5 @@ public class TodoEntity {
     private UserEntity user;
 
     // 할 일 추가, 수정시 사용할 외래키
-    private String userId;
+    private String user_Id;
 }
