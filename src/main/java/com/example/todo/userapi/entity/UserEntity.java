@@ -18,7 +18,7 @@ public class UserEntity {
 
     @Id
     @Column(name = "user_id")
-    @GeneratedValue(generator = "system-uuid")
+    @GeneratedValue(generator = "system-uuid") // 유일한 ID값을 얻기 위해
     @GenericGenerator(name = "system-uuid", strategy = "uuid")
     private String id; // 계정명이 아니라 식별코드
 
