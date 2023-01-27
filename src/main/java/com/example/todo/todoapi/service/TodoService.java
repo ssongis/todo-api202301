@@ -46,7 +46,7 @@ public class TodoService {
     {
 
         TodoEntity todo = createRequestDTO.toEntity();
-        todo.setUserId(userId);
+        todo.setUser_Id(userId);
 
         todoRepository.save(todo);
         log.info("할 일이 저장되었습니다. 제목 : {}", createRequestDTO.getTitle());
@@ -88,13 +88,3 @@ public class TodoService {
 
 
 }
-
-
-
-
-
-
-
-
-
-
