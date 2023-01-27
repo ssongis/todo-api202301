@@ -24,7 +24,7 @@ public class TodoEntity {
     private String todoId;
 
     @Column(nullable = false, length = 30)
-    private String title; // 제목
+    private String title; // 제목, dto로 가져옴
 
     private boolean done; // 일정 완료 여부
 
@@ -33,6 +33,10 @@ public class TodoEntity {
 
     // 회원과 관계 설정
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    // 연관관계 설정은 했지만 INSERT, UPDATE시에는 이 객체를 활용하지 않겠다.
+    @JoinColumn(name = "user_id", insertable = false, updatable = false)
     private UserEntity user;
+
+    // 할 일 추가, 수정시 사용할 외래키
+    private String userId;
 }

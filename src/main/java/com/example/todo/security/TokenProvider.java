@@ -60,7 +60,7 @@ public class TokenProvider {
                 // 위조되지 않았다면 body에 페이로드(Claims)를 리턴
                 // 위조되었으면 예외를 발생시킴
                 // 아래 토큰 정보 있음
-                .parseClaimsJwt(token)
+                .parseClaimsJws(token)
                 .getBody();
 
         return claims.getSubject();
